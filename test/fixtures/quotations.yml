@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quotation_n: 1
+  supplier: one
+  client: one
+  seller: one
+  handler: one
+  status_boolean: MyString
+
+two:
+  quotation_n: 1
+  supplier: two
+  client: two
+  seller: two
+  handler: two
+  status_boolean: MyString

@@ -1,0 +1,2 @@
+class BasicCategory < ApplicationRecord
+end

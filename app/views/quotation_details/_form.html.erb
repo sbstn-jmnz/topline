@@ -1,0 +1,75 @@
+<%= form_with(model: quotation_detail, local: true) do |form| %>
+  <% if quotation_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(quotation_detail.errors.count, "error") %> prohibited this quotation_detail from being saved:</h2>
+
+      <ul>
+      <% quotation_detail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :basic_category_id %>
+    <%= form.collection_select :basic_category_id, BasicCategory.all, :id, :name %>
+    <button type="button" name="button">
+      <%= link_to 'Add Category', new_basic_category_path %>
+    </button>
+  </div>
+
+  <div class="field">
+    <%= form.label :target_price %>
+    <%= form.text_field :target_price, id: :quotation_detail_target_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity, id: :quotation_detail_quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :color %>
+    <%= form.text_field :color, id: :quotation_detail_color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :size %>
+    <%= form.text_field :size, id: :quotation_detail_size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ratio %>
+    <%= form.number_field :ratio, id: :quotation_detail_ratio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :delivery_date %>
+    <%= form.date_select :delivery_date, id: :quotation_detail_delivery_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :quotation_detail_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :incoterm %>
+    <%= form.text_field :incoterm, id: :quotation_detail_incoterm %>
+  </div>
+
+  <div class="field">
+    <%= form.label :final_price %>
+    <%= form.text_field :final_price, id: :quotation_detail_final_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quotation_id %>
+    <%= form.text_field :quotation_id, id: :quotation_detail_quotation_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand: MyString
+  style: MyString
+  description: MyText
+  construction: MyText
+  composition: MyText
+  washing: MyString
+  fit: MyString
+  pocket: MyString
+  placket: MyString
+  finish: MyString
+  packing: MyText
+  other: MyString
+  Art: MyText
+  quotation_details: one
+
+two:
+  brand: MyString
+  style: MyString
+  description: MyText
+  construction: MyText
+  composition: MyText
+  washing: MyString
+  fit: MyString
+  pocket: MyString
+  placket: MyString
+  finish: MyString
+  packing: MyText
+  other: MyString
+  Art: MyText
+  quotation_details: two

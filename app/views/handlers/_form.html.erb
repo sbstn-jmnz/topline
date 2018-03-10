@@ -1,0 +1,27 @@
+<%= form_with(model: handler, local: true) do |form| %>
+  <% if handler.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(handler.errors.count, "error") %> prohibited this handler from being saved:</h2>
+
+      <ul>
+      <% handler.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+  <%= form.label :supplier_id %>
+  <%= form.collection_select :supplier_id, Supplier.all, :id, :name %>
+</div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :handler_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

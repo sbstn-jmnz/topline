@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Quotations</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Quotation n</th>
+      <th>Supplier</th>
+      <th>Client</th>
+      <th>Seller</th>
+      <th>Handler</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quotations.each do |quotation| %>
+      <tr>
+        <td><%= quotation.quotation_n %></td>
+        <td><%= quotation.supplier.name %></td>
+        <td><%= quotation.client.name %></td>
+        <td><%= quotation.seller.name %></td>
+        <td><%= quotation.handler.name %></td>
+        <td>
+            <% if quotation.status %></td>
+            <%= 'confirmed' %>
+            <button type="button" name="button">
+            <%= link_to 'Quotation details' %>
+          </button>
+
+            <% else %>
+            <%= 'pending' %>
+          <td>
+            <button type="button" name="button">
+            <%= link_to 'Add quotation details', new_quotation_detail_path %>
+          </button>
+          <% end %>
+        </td>
+
+        </td>
+        <td><%= link_to 'Show', quotation %></td>
+        <td><%= link_to 'Edit', edit_quotation_path(quotation) %></td>
+        <td><%= link_to 'Destroy', quotation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= link_to 'New Quotation', new_quotation_path %>
