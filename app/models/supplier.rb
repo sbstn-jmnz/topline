@@ -1,3 +1,4 @@
 class Supplier < ApplicationRecord
-  has_many :handler
+  has_one :supplieraccount
+  has_many :handlers
 end

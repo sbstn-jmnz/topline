@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Supplieraccounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Supplier</th>
+      <th>Bank</th>
+      <th>Address</th>
+      <th>Account</th>
+      <th>Swift</th>
+      <th>Other</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @supplieraccounts.each do |supplieraccount| %>
+      <tr>
+        <td><%= supplieraccount.supplier %></td>
+        <td><%= supplieraccount.bank %></td>
+        <td><%= supplieraccount.address %></td>
+        <td><%= supplieraccount.account %></td>
+        <td><%= supplieraccount.swift %></td>
+        <td><%= supplieraccount.other %></td>
+        <td><%= link_to 'Show', supplieraccount %></td>
+        <td><%= link_to 'Edit', edit_supplieraccount_path(supplieraccount) %></td>
+        <td><%= link_to 'Destroy', supplieraccount, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Supplieraccount', new_supplieraccount_path %>

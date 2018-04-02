@@ -17,7 +17,7 @@ class SellersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create seller" do
     assert_difference('Seller.count') do
-      post sellers_url, params: { seller: { name: @seller.name } }
+      post sellers_url, params: { seller: { country: @seller.country, email: @seller.email, name: @seller.name, phone: @seller.phone } }
     end
 
     assert_redirected_to seller_url(Seller.last)
@@ -34,7 +34,7 @@ class SellersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update seller" do
-    patch seller_url(@seller), params: { seller: { name: @seller.name } }
+    patch seller_url(@seller), params: { seller: { country: @seller.country, email: @seller.email, name: @seller.name, phone: @seller.phone } }
     assert_redirected_to seller_url(@seller)
   end
 

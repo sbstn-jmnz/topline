@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Seller:</strong>
+  <%= @selleraccount.seller %>
+</p>
+
+<p>
+  <strong>Bank:</strong>
+  <%= @selleraccount.bank %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @selleraccount.address %>
+</p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @selleraccount.account %>
+</p>
+
+<p>
+  <strong>Swift:</strong>
+  <%= @selleraccount.swift %>
+</p>
+
+<p>
+  <strong>Other:</strong>
+  <%= @selleraccount.other %>
+</p>
+
+<%= link_to 'Edit', edit_selleraccount_path(@selleraccount) %> |
+<%= link_to 'Back', selleraccounts_path %>

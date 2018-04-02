@@ -15,6 +15,7 @@ class QuotationsController < ApplicationController
   # GET /quotations/new
   def new
     @quotation = Quotation.new
+
   end
 
   # GET /quotations/1/edit
@@ -41,7 +42,9 @@ class QuotationsController < ApplicationController
   # PATCH/PUT /quotations/1.json
   def update
     respond_to do |format|
-      if @quotation.update(quotation_params)
+      if @quotation.status?  == false
+        format.html { redirect_to orders_index_path, notice: 'Orden creada exitosamente'}
+      elsif  @quotation.update(quotation_params)
         format.html { redirect_to @quotation, notice: 'Quotation was successfully updated.' }
         format.json { render :show, status: :ok, location: @quotation }
       else
@@ -69,6 +72,6 @@ class QuotationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quotation_params
-      params.require(:quotation).permit(:quotation_n, :supplier_id, :client_id, :seller_id, :handler_id, :status)
+      params.require(:quotation).permit(:season_id, :supplier_id, :handler_id, :seller_id, :client_id, :paymentterm_id, :status)
     end
 end

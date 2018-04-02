@@ -12,13 +12,18 @@
   <% end %>
 
   <div class="field">
-  <%= form.label :supplier_id %>
-  <%= form.collection_select :supplier_id, Supplier.all, :id, :name %>
-</div>
+    <%= form.label :supplier_id %>
+    <%= form.collection_select :supplier_id, Supplier.all, :id, :name %>
+  </div>
 
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name, id: :handler_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :handler_email %>
   </div>
 
   <div class="actions">

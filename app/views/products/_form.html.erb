@@ -11,51 +11,19 @@
     </div>
   <% end %>
 
-
-
   <div class="field">
-    <%= form.label :brand %>
-    <%= form.text_field :brand, id: :product_brand %>
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id, Category.all, :id, :name %>
   </div>
 
   <div class="field">
-    <%= form.label :style %>
-    <%= form.text_field :style, id: :product_style %>
+    <%= form.label :photo %>
+    <%= form.text_field :photo, id: :product_photo %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description, id: :product_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :construction %>
-    <%= form.text_area :construction, id: :product_construction %>
-  </div>
-
-  <div class="field">
-    <%= form.label :composition %>
-    <%= form.text_area :composition, id: :product_composition %>
-  </div>
-
-  <div class="field">
-    <%= form.label :washing %>
-    <%= form.text_field :washing, id: :product_washing %>
-  </div>
-
-  <div class="field">
-    <%= form.label :fit %>
-    <%= form.text_field :fit, id: :product_fit %>
-  </div>
-
-  <div class="field">
-    <%= form.label :pocket %>
-    <%= form.text_field :pocket, id: :product_pocket %>
-  </div>
-
-  <div class="field">
-    <%= form.label :placket %>
-    <%= form.text_field :placket, id: :product_placket %>
+    <%= form.text_field :description, id: :product_description %>
   </div>
 
   <div class="field">
@@ -64,23 +32,38 @@
   </div>
 
   <div class="field">
-    <%= form.label :packing %>
-    <%= form.text_area :packing, id: :product_packing %>
+    <%= form.label :composition %>
+    <%= form.text_field :composition, id: :product_composition %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fit %>
+    <%= form.text_field :fit, id: :product_fit %>
+  </div>
+
+  <div class="field">
+    <%= form.label :construction %>
+    <%= form.text_field :construction, id: :product_construction %>
+  </div>
+
+  <div class="field">
+    <%= form.label :placket %>
+    <%= form.text_field :placket, id: :product_placket %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pocket %>
+    <%= form.text_field :pocket, id: :product_pocket %>
+  </div>
+
+  <div class="field">
+    <%= form.label :washing %>
+    <%= form.text_field :washing, id: :product_washing %>
   </div>
 
   <div class="field">
     <%= form.label :other %>
     <%= form.text_field :other, id: :product_other %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Art %>
-    <%= form.text_area :Art, id: :product_Art %>
-  </div>
-
-  <div class="field">
-    <%= form.label :quotation_details_id %>
-    <%= form.text_field :quotation_details_id, id: :product_quotation_details_id %>
   </div>
 
   <div class="actions">

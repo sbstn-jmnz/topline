@@ -2,6 +2,18 @@
 
 one:
   name: MyString
+  address: MyText
+  country: MyString
+  contact: MyString
+  phone: MyString
+  fax: MyString
+  email: MyString
 
 two:
   name: MyString
+  address: MyText
+  country: MyString
+  contact: MyString
+  phone: MyString
+  fax: MyString
+  email: MyString

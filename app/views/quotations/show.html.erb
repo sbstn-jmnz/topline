@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Quotation n:</strong>
-  <%= @quotation.quotation_n %>
+  <strong>Season:</strong>
+  <%= @quotation.season %>
 </p>
 
 <p>
@@ -11,18 +11,23 @@
 </p>
 
 <p>
-  <strong>Client:</strong>
-  <%= @quotation.client.name %>
+  <strong>Handler:</strong>
+  <%= @quotation.handler %>
 </p>
 
 <p>
   <strong>Seller:</strong>
-  <%= @quotation.seller.name %>
+  <%= @quotation.seller %>
 </p>
 
 <p>
-  <strong>Handler:</strong>
-  <%= @quotation.handler.name %>
+  <strong>Client:</strong>
+  <%= @quotation.client %>
+</p>
+
+<p>
+  <strong>Paymentterm:</strong>
+  <%= @quotation.paymentterm %>
 </p>
 
 <p>

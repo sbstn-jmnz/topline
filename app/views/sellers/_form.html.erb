@@ -16,6 +16,23 @@
     <%= form.text_field :name, id: :seller_name %>
   </div>
 
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :seller_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :seller_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country, id: :seller_country %>
+    <%= form.collection_select(:country, Country.all, :country_code, :name,
+    {:prompt => 'Select'})%>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

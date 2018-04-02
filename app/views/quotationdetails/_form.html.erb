@@ -1,0 +1,134 @@
+<%= form_with(model: quotationdetail, local: true) do |form| %>
+  <% if quotationdetail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(quotationdetail.errors.count, "error") %> prohibited this quotationdetail from being saved:</h2>
+
+      <ul>
+      <% quotationdetail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="card">
+  <div class="field">
+    <%= form.label :quotation_id %>
+    <%= form.collection_select :quotation_id, Quotation.all, :id, :id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :brand_id %>
+    <%= form.collection_select :brand_id, Brand.all, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_id %>
+    <%= form.collection_select :product_id, Product.all, :id, :description %>
+  </div>
+<div class="card">
+
+
+    <div class="field">
+      <%= form.label :deliverydate %>
+      <%= form.date_select :deliverydate, id: :quotationdetail_deliverydate %>
+    </div>
+
+
+      <div class="field">
+        <%= form.label :targetprice %>
+        <%= form.number_field :targetprice, id: :quotationdetail_targetprice %>
+      </div>
+
+      <div class="field">
+        <%= form.label :finalprice %>
+        <%= form.number_field :finalprice, id: :quotationdetail_finalprice %>
+      </div>
+
+</div>
+
+
+
+
+<table class="table table-responsive">
+  <thead>
+    <tr>
+        <th><%= form.label :otherdetails, "Details" %></th>
+        <th><%= form.label :color_id %></th>
+        <th><%= form.collection_select :size_id, Size.all, :id, :name %></th>
+        <th><%= form.collection_select :size_id, Size.all, :id, :name %></th>
+        <th><%= form.collection_select :size_id, Size.all, :id, :name %></th>
+        <th><%= form.collection_select :size_id, Size.all, :id, :name %></th>
+        <th><%= form.collection_select :size_id, Size.all, :id, :name %></th>
+        <th><%= form.collection_select :size_id, Size.all, :id, :name %></th>
+        <th><%= form.label :ratio %></th>
+        <th> Add Row</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><%= form.text_field :otherdetails, id: :quotationdetail_otherdetails %></td>
+        <td><%= form.collection_select :color_id, Color.all, :id, :name %></td>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></td>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></td>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></dtd>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></td>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></td>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></td>
+        <td><%= form.text_field :ratio, id: :quotationdetail_ratio %></td>
+        <td> <%= link_to "Add row", "#", class: "btn btn-primary btn-sm" %></td>
+
+    </tr>
+    <tr>
+        <td><%= form.text_field :otherdetails, id: :quotationdetail_otherdetails %></td>
+        <td><%= form.collection_select :color_id, Color.all, :id, :name %></td>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></td>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></td>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></dtd>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></td>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></td>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></td>
+        <td><%= form.text_field :ratio, id: :quotationdetail_ratio %></td>
+        <td> <%= link_to "Add row", "#", class: "btn btn-primary btn-sm" %></td>
+
+    </tr>
+    <tr>
+        <td><%= form.text_field :otherdetails, id: :quotationdetail_otherdetails %></td>
+        <td><%= form.collection_select :color_id, Color.all, :id, :name %></td>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></td>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></td>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></dtd>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></td>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></td>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></td>
+        <td><%= form.text_field :ratio, id: :quotationdetail_ratio %></td>
+        <td> <%= link_to "Add row", "#", class: "btn btn-primary btn-sm" %></td>
+
+    </tr>
+    <tr>
+        <td><%= form.text_field :otherdetails, id: :quotationdetail_otherdetails %></td>
+        <td><%= form.collection_select :color_id, Color.all, :id, :name %></td>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></td>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></td>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></dtd>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></td>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></td>
+        <td><%= form.text_field :quantity, id: :quotationdetail_quantity %></td>
+        <td><%= form.text_field :ratio, id: :quotationdetail_ratio %></td>
+        <td> <%= link_to "Add row", "#", class: "btn btn-primary btn-sm" %></td>
+
+    </tr>
+
+
+  </tbody>
+</table>
+
+
+
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

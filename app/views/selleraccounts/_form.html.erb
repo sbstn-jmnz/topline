@@ -1,0 +1,47 @@
+<%= form_with(model: selleraccount, local: true) do |form| %>
+  <% if selleraccount.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(selleraccount.errors.count, "error") %> prohibited this selleraccount from being saved:</h2>
+
+      <ul>
+      <% selleraccount.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :seller_id %>
+    <%= form.text_field :seller_id, id: :selleraccount_seller_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bank %>
+    <%= form.text_field :bank, id: :selleraccount_bank %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_area :address, id: :selleraccount_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :account %>
+    <%= form.text_field :account, id: :selleraccount_account %>
+  </div>
+
+  <div class="field">
+    <%= form.label :swift %>
+    <%= form.text_field :swift, id: :selleraccount_swift %>
+  </div>
+
+  <div class="field">
+    <%= form.label :other %>
+    <%= form.text_field :other, id: :selleraccount_other %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

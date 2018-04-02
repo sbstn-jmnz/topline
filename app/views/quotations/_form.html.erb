@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :quotation_n %>
-    <%= form.number_field :quotation_n, id: :quotation_quotation_n %>
+    <%= form.label :season_id %>
+    <%= form.collection_select :season_id, Season.all, :id, :name   %>
   </div>
 
   <div class="field">
@@ -22,10 +22,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :client_id %>
-    <%= form.collection_select :client_id, Client.all, :id, :name %>
-    <br>
-    <p> <%= link_to 'Add Cliente', new_client_path %> </p>
+    <%= form.label :handler_id %>
+    <%= form.collection_select :handler_id, Handler.all, :id, :name %>
   </div>
 
   <div class="field">
@@ -34,13 +32,19 @@
   </div>
 
   <div class="field">
-    <%= form.label :handler_id %>
-    <%= form.collection_select :handler_id, Handler.all, :id, :name %>
+    <%= form.label :client_id %>
+    <%= form.collection_select :client_id, Client.all, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :paymentterm_id %>
+    <%= form.collection_select :paymentterm_id, Paymentterm.all, :id, :clause %>
+    <%= form.collection_select :paymentterm_id, Paymentterm.all, :id, :conditions %>
   </div>
 
   <div class="field">
     <%= form.label :status %>
-    <%= form.check_box :status_id, {}, true, false %>
+    <%= form.check_box :status, id: :quotation_status %>
   </div>
 
   <div class="actions">

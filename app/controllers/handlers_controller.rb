@@ -69,6 +69,6 @@ class HandlersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def handler_params
-      params.require(:handler).permit(:name, :supplier_name)
+      params.require(:handler).permit(:supplier_id, :name, :email)
     end
 end

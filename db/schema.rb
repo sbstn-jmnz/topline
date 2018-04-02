@@ -10,12 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180310220734) do
+ActiveRecord::Schema.define(version: 20180402001201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "basic_categories", force: :cascade do |t|
+  create_table "active_admin_comments", force: :cascade do |t|
+    t.string "namespace"
+    t.text "body"
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.string "author_type"
+    t.bigint "author_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  end
+
+  create_table "admin_users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admin_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "alarms", force: :cascade do |t|
+    t.string "description"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "brands", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -23,84 +67,200 @@ ActiveRecord::Schema.define(version: 20180310220734) do
 
   create_table "clients", force: :cascade do |t|
     t.string "name"
+    t.text "address"
+    t.string "country"
+    t.string "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "colors", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "handlers", force: :cascade do |t|
+    t.bigint "supplier_id"
     t.string "name"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["supplier_id"], name: "index_handlers_on_supplier_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "quotationdetails_id"
+    t.boolean "shipped"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quotationdetails_id"], name: "index_orders_on_quotationdetails_id"
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "paymentterms", force: :cascade do |t|
+    t.string "clause"
+    t.string "conditions"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ports", force: :cascade do |t|
+    t.string "name"
+    t.string "country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "brand"
-    t.string "style"
-    t.text "description"
-    t.text "construction"
-    t.text "composition"
-    t.string "washing"
-    t.string "fit"
-    t.string "pocket"
-    t.string "placket"
+    t.bigint "category_id"
+    t.string "photo"
+    t.string "description"
     t.string "finish"
-    t.text "packing"
+    t.string "composition"
+    t.string "fit"
+    t.string "construction"
+    t.string "placket"
+    t.string "pocket"
+    t.string "washing"
     t.string "other"
-    t.text "Art"
-    t.bigint "quotation_details_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["quotation_details_id"], name: "index_products_on_quotation_details_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
   end
 
-  create_table "quotation_details", force: :cascade do |t|
-    t.string "product"
-    t.decimal "target_price"
-    t.integer "quantity"
-    t.string "color"
-    t.string "size"
-    t.integer "ratio"
-    t.date "delivery_date"
-    t.string "status"
-    t.string "incoterm"
-    t.decimal "final_price"
+  create_table "quotationdetails", force: :cascade do |t|
     t.bigint "quotation_id"
+    t.bigint "brand_id"
+    t.bigint "product_id"
+    t.bigint "color_id"
+    t.string "quantity"
+    t.bigint "size_id"
+    t.string "ratio"
+    t.date "deliverydate"
+    t.string "targetprice"
+    t.string "finalprice"
+    t.string "otherdetails"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["quotation_id"], name: "index_quotation_details_on_quotation_id"
+    t.index ["brand_id"], name: "index_quotationdetails_on_brand_id"
+    t.index ["color_id"], name: "index_quotationdetails_on_color_id"
+    t.index ["product_id"], name: "index_quotationdetails_on_product_id"
+    t.index ["quotation_id"], name: "index_quotationdetails_on_quotation_id"
+    t.index ["size_id"], name: "index_quotationdetails_on_size_id"
   end
 
   create_table "quotations", force: :cascade do |t|
-    t.integer "quotation_n"
+    t.bigint "season_id"
     t.bigint "supplier_id"
-    t.bigint "client_id"
-    t.bigint "seller_id"
     t.bigint "handler_id"
+    t.bigint "seller_id"
+    t.bigint "client_id"
+    t.bigint "paymentterm_id"
+    t.boolean "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "status"
     t.index ["client_id"], name: "index_quotations_on_client_id"
     t.index ["handler_id"], name: "index_quotations_on_handler_id"
+    t.index ["paymentterm_id"], name: "index_quotations_on_paymentterm_id"
+    t.index ["season_id"], name: "index_quotations_on_season_id"
     t.index ["seller_id"], name: "index_quotations_on_seller_id"
     t.index ["supplier_id"], name: "index_quotations_on_supplier_id"
   end
 
-  create_table "sellers", force: :cascade do |t|
+  create_table "seasons", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "closed"
+  end
+
+  create_table "selleraccounts", force: :cascade do |t|
+    t.bigint "seller_id"
+    t.string "bank"
+    t.text "address"
+    t.string "account"
+    t.string "swift"
+    t.string "other"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["seller_id"], name: "index_selleraccounts_on_seller_id"
+  end
+
+  create_table "sellers", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.string "country"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sizes", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "supplieraccounts", force: :cascade do |t|
+    t.bigint "supplier_id"
+    t.string "bank"
+    t.text "address"
+    t.string "account"
+    t.string "swift"
+    t.string "other"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["supplier_id"], name: "index_supplieraccounts_on_supplier_id"
   end
 
   create_table "suppliers", force: :cascade do |t|
     t.string "name"
+    t.text "address"
+    t.string "country"
+    t.string "contact"
+    t.string "phone"
+    t.string "fax"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "products", "quotation_details", column: "quotation_details_id"
-  add_foreign_key "quotation_details", "quotations"
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "handlers", "suppliers"
+  add_foreign_key "orders", "quotationdetails", column: "quotationdetails_id"
+  add_foreign_key "products", "categories"
+  add_foreign_key "quotationdetails", "brands"
+  add_foreign_key "quotationdetails", "colors"
+  add_foreign_key "quotationdetails", "products"
+  add_foreign_key "quotationdetails", "quotations"
+  add_foreign_key "quotationdetails", "sizes"
   add_foreign_key "quotations", "clients"
   add_foreign_key "quotations", "handlers"
+  add_foreign_key "quotations", "paymentterms"
+  add_foreign_key "quotations", "seasons"
   add_foreign_key "quotations", "sellers"
   add_foreign_key "quotations", "suppliers"
+  add_foreign_key "selleraccounts", "sellers"
+  add_foreign_key "supplieraccounts", "suppliers"
 end

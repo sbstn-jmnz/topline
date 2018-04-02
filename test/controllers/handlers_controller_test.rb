@@ -17,7 +17,7 @@ class HandlersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create handler" do
     assert_difference('Handler.count') do
-      post handlers_url, params: { handler: { name: @handler.name } }
+      post handlers_url, params: { handler: { email: @handler.email, name: @handler.name, supplier_id: @handler.supplier_id } }
     end
 
     assert_redirected_to handler_url(Handler.last)
@@ -34,7 +34,7 @@ class HandlersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update handler" do
-    patch handler_url(@handler), params: { handler: { name: @handler.name } }
+    patch handler_url(@handler), params: { handler: { email: @handler.email, name: @handler.name, supplier_id: @handler.supplier_id } }
     assert_redirected_to handler_url(@handler)
   end
 

@@ -17,7 +17,7 @@ class QuotationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create quotation" do
     assert_difference('Quotation.count') do
-      post quotations_url, params: { quotation: { client_id: @quotation.client_id, handler_id: @quotation.handler_id, quotation_n: @quotation.quotation_n, seller_id: @quotation.seller_id, status_boolean: @quotation.status_boolean, supplier_id: @quotation.supplier_id } }
+      post quotations_url, params: { quotation: { client_id: @quotation.client_id, handler_id: @quotation.handler_id, paymentterm_id: @quotation.paymentterm_id, season_id: @quotation.season_id, seller_id: @quotation.seller_id, status: @quotation.status, supplier_id: @quotation.supplier_id } }
     end
 
     assert_redirected_to quotation_url(Quotation.last)
@@ -34,7 +34,7 @@ class QuotationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update quotation" do
-    patch quotation_url(@quotation), params: { quotation: { client_id: @quotation.client_id, handler_id: @quotation.handler_id, quotation_n: @quotation.quotation_n, seller_id: @quotation.seller_id, status_boolean: @quotation.status_boolean, supplier_id: @quotation.supplier_id } }
+    patch quotation_url(@quotation), params: { quotation: { client_id: @quotation.client_id, handler_id: @quotation.handler_id, paymentterm_id: @quotation.paymentterm_id, season_id: @quotation.season_id, seller_id: @quotation.seller_id, status: @quotation.status, supplier_id: @quotation.supplier_id } }
     assert_redirected_to quotation_url(@quotation)
   end
 
