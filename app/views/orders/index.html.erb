@@ -28,12 +28,10 @@
         <td><%= quotation.paymentterm.conditions %></td>
         <td><%= quotation.status? ? "CONFIRMED" : "PENDING" %></td>
       <!--  <td><%= link_to 'Show', quotation %></td> -->
-          <% if quotation.status? == false%>
-        <% end %>
       </tr>
-    <% end %>
+
   </tbody>
-  
+
   <thead>
     <tr>
       <th>Quotation</th>
@@ -52,7 +50,7 @@
   </thead>
 
   <tbody>
-    <% @quotationdetails.each do |quotationdetail| %>
+    <% quotation.quotationdetails.each do |quotationdetail| %>
       <tr>
         <td><%= quotationdetail.quotation.id %></td>
         <td><%= quotationdetail.brand.name %></td>
@@ -68,4 +66,5 @@
       </tr>
     <% end %>
   </tbody>
+  <% end %>
 </table>

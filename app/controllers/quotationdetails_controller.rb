@@ -24,6 +24,7 @@ class QuotationdetailsController < ApplicationController
   # POST /quotationdetails
   # POST /quotationdetails.json
   def create
+    debugger
     @quotationdetail = Quotationdetail.new(quotationdetail_params)
 
     respond_to do |format|

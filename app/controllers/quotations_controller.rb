@@ -43,7 +43,7 @@ class QuotationsController < ApplicationController
   def update
     respond_to do |format|
       if @quotation.status?  == false
-        format.html { redirect_to orders_index_path, notice: 'Orden creada exitosamente'}
+        format.html { redirect_to orders_path, notice: 'Order was successfully created'}
       elsif  @quotation.update(quotation_params)
         format.html { redirect_to @quotation, notice: 'Quotation was successfully updated.' }
         format.json { render :show, status: :ok, location: @quotation }
