@@ -1,0 +1,35 @@
+<div class='nested-fields'>
+<table class="table table-responsive">
+<thead>
+    <tr>
+        <th><%= f.label :quotation_id %></th>
+        <th><%= f.label :brand_id %></th>
+        <th><%= f.label :product_id %></th>
+        <th><%= f.label :deliverydate %></th>
+        <th><%= f.label :targetprice %></th>
+        <th><%= f.label :finalprice %></th>
+        <th><%= f.label :otherdetails, "Details" %></th>
+        <th><%= f.label :quantity, "Quantity" %></th>
+        <th><%= f.label :color_id %></th>
+        <th><%= f.label :size_id%></th>
+        <th><%= f.label :ratio %> </th>
+        <td><%= f.hidden_field :_destroy %></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><%= f.collection_select :quotation_id, Quotation.all, :id, :id %></td>
+        <td><%= f.collection_select :brand_id, Brand.all, :id, :name %></td>
+        <td><%= f.collection_select :product_id, Product.all, :id, :description %></td>
+        <td><%= f.date_field :deliverydate, id: :quotationdetail_deliverydate %></td>
+        <td><%= f.number_field :targetprice, id: :quotationdetail_targetprice %></td>
+        <td><%= f.number_field :finalprice, id: :quotationdetail_finalprice %></td>
+        <td><%= f.text_field :otherdetails, id: :quotationdetail_otherdetails %></td>
+        <td><%= f.number_field :quantity, id: :quantity %></td>
+        <td><%= f.collection_select :color_id, Color.all, :id, :name %></td>
+        <td><%= f.collection_select :size_id, Size.all, :id, :name %></td>
+        <td><%= f.text_field :ratio, id: :quotationdetail_ratio %></td>
+        <th><%= link_to_remove_association "remove row", f %> </th>
+    </tr>
+  </tbody>
+</table>

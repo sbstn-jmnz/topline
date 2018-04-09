@@ -23,7 +23,6 @@
 
   <div class="field">
     <%= form.label :country %>
-    <%= form.text_field :country, id: :supplier_country %>
     <%= form.collection_select(:country, Country.all, :country_code, :name,
     {:prompt => 'Select'})%></div>
 

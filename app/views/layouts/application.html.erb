@@ -3,33 +3,37 @@
   <head>
     <title>StgoOffice</title>
     <%= csrf_meta_tags %>
+    <link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
 
   </head>
 
-  <body class="fixed-nav sticky-footer" id="page-top">
-
-    <%= render "layouts/navbar" %>
-         <div class="content-wrapper">
-           <div class="container-fluid">
-             <div class="card">
-               <div class="card-header">
-                   <div class="card-body">
-                     <%= yield %>
-                   </div>
-               <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-             </div>
+  <body>
+    <div id="wrapper" class="toggled">
+      <%= render "layouts/navbar3" %>
+          <div id="page-content-wrapper" class="card">
+            <div class="card-header">
+              <h4 class="font-italic">Top Line Ltda. AG Chile</h4>
             </div>
-        </div>
+            <%= yield %>
+          </div>
+          <div class="card-footer text.center">
+            <div class="text-center">
+              <small>Copyright © Laban.cl 2018</small>
+            </div>
+         </div>
+      </div>
+    </div>
+    <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
-  </body>
-  <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
-  <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function () {
+        $('#myTable').DataTable();
+    } );
+    </script>
+
+</body>
+
 
 </html>

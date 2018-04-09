@@ -15,7 +15,6 @@ class QuotationsController < ApplicationController
   # GET /quotations/new
   def new
     @quotation = Quotation.new
-
   end
 
   # GET /quotations/1/edit
@@ -26,7 +25,6 @@ class QuotationsController < ApplicationController
   # POST /quotations.json
   def create
     @quotation = Quotation.new(quotation_params)
-
     respond_to do |format|
       if @quotation.save
         format.html { redirect_to @quotation, notice: 'Quotation was successfully created.' }
@@ -42,9 +40,7 @@ class QuotationsController < ApplicationController
   # PATCH/PUT /quotations/1.json
   def update
     respond_to do |format|
-      if @quotation.status?  == false
-        format.html { redirect_to orders_path, notice: 'Order was successfully created'}
-      elsif  @quotation.update(quotation_params)
+      if @quotation.update(quotation_params)
         format.html { redirect_to @quotation, notice: 'Quotation was successfully updated.' }
         format.json { render :show, status: :ok, location: @quotation }
       else
@@ -53,7 +49,6 @@ class QuotationsController < ApplicationController
       end
     end
   end
-
   # DELETE /quotations/1
   # DELETE /quotations/1.json
   def destroy
@@ -72,6 +67,10 @@ class QuotationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quotation_params
-      params.require(:quotation).permit(:season_id, :supplier_id, :handler_id, :seller_id, :client_id, :paymentterm_id, :status)
+      params.require(:quotation).permit(
+        :season_id, :supplier_id, :handler_id, :seller_id, :client_id, :paymentterm_id, :status, :pi,
+        quotationdetails_attributes:
+          [:id, :quotation_id, :brand_id, :product_id, :color_id, :quantity, :size_id,
+            :ratio, :deliverydate, :targetprice, :finalprice, :otherdetails, :_destroy,])
     end
 end

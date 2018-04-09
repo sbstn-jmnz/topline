@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Deductions</h1>
+
+<table class="table table-striped table-bordered table-hover table-sm " id="myTable">
+  <thead class="table-secondary">
+    <tr>
+      <th>Client</th>
+      <th>Alarm</th>
+      <th>Freight</th>
+      <th>Overcharge</th>
+      <th>Interest</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @deductions.each do |deduction| %>
+      <tr>
+        <td><%= deduction.client.name %></td>
+        <td><%= deduction.alarm %></td>
+        <td><%= deduction.freight %></td>
+        <td><%= deduction.overcharge %></td>
+        <td><%= deduction.interest %></td>
+        <td><%= link_to 'Show', deduction %></td>
+        <td><%= link_to 'Edit', edit_deduction_path(deduction) %></td>
+        <td><%= link_to 'Destroy', deduction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Deduction', new_deduction_path %>

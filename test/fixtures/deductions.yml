@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client: one
+  alarm: 9.99
+  freight: 9.99
+  overcharge: 9.99
+  interest: 9.99
+
+two:
+  client: two
+  alarm: 9.99
+  freight: 9.99
+  overcharge: 9.99
+  interest: 9.99

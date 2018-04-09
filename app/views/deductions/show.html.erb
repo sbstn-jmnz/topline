@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @deduction.client.name %>
+</p>
+
+<p>
+  <strong>Alarm:</strong>
+  <%= @deduction.alarm %>
+</p>
+
+<p>
+  <strong>Freight:</strong>
+  <%= @deduction.freight %>
+</p>
+
+<p>
+  <strong>Overcharge:</strong>
+  <%= @deduction.overcharge %>
+</p>
+
+<p>
+  <strong>Interest:</strong>
+  <%= @deduction.interest %>
+</p>
+
+<%= link_to 'Edit', edit_deduction_path(@deduction) %> |
+<%= link_to 'Back', deductions_path %>

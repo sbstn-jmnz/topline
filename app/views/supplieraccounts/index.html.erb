@@ -2,7 +2,7 @@
 
 <h1>Supplieraccounts</h1>
 
-<table>
+<table class="table table-striped table-bordered table-hover table-sm " id="myTable">
   <thead>
     <tr>
       <th>Supplier</th>
@@ -11,14 +11,16 @@
       <th>Account</th>
       <th>Swift</th>
       <th>Other</th>
-      <th colspan="3"></th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @supplieraccounts.each do |supplieraccount| %>
       <tr>
-        <td><%= supplieraccount.supplier %></td>
+        <td><%= supplieraccount.supplier.name %></td>
         <td><%= supplieraccount.bank %></td>
         <td><%= supplieraccount.address %></td>
         <td><%= supplieraccount.account %></td>

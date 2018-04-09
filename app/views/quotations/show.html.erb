@@ -35,5 +35,10 @@
   <%= @quotation.status %>
 </p>
 
+<p>
+  <strong>proforma:</strong>
+  <%= @quotation.pi %>
+</p>
+
 <%= link_to 'Edit', edit_quotation_path(@quotation) %> |
 <%= link_to 'Back', quotations_path %>

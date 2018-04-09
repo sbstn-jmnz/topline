@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :commissions
+  resources :documents
+  resources :deliveries
+  resources :payments
+  resources :pinumbers
+  resources :deductions
   #get 'orders/index'
   resources :orders, only: :index
   resources :quotationdetails

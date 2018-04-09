@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Delivery:</strong>
+  <%= @document.delivery %>
+</p>
+
+<p>
+  <strong>Docsbymail:</strong>
+  <%= @document.docsbymail %>
+</p>
+
+<p>
+  <strong>Approvaldate:</strong>
+  <%= @document.approvaldate %>
+</p>
+
+<p>
+  <strong>Courier:</strong>
+  <%= @document.courier %>
+</p>
+
+<p>
+  <strong>Received:</strong>
+  <%= @document.received %>
+</p>
+
+<p>
+  <strong>Senttoclient:</strong>
+  <%= @document.senttoclient %>
+</p>
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>

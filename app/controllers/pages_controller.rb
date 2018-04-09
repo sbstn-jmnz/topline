@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def index
-    @clients = Client.all
+
     @quotations = Quotation.all
+    @orders = Order.all
   end
 end

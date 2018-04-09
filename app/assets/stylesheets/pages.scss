@@ -3,13 +3,30 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.card-body-icon {
-  position: absolute;
-  z-index: 0;
-  top: -25px;
-  right: -25px;
-  font-size: 5rem;
-  -webkit-transform: rotate(15deg);
-  -ms-transform: rotate(15deg);
-  transform: rotate(15deg);
-}
+
+ .cardblue{
+   background-color: #00b9f1
+ }
+ .cardyellow{
+   background-color: #ffc952
+ }
+
+ .cardgreen{
+   background-color: #2EC4B6
+ }
+
+ .cardred{
+   background-color: #f15c5c
+ }
+
+
+  .card-body-icon {
+    position: absolute;
+    z-index: 0;
+    top: -25px;
+    right: -25px;
+    font-size: 5rem;
+    -webkit-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }

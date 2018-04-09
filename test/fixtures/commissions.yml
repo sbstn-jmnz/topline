@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  delivery: one
+  deduction: one
+  comm: 9.99
+  totalcomm: 9.99
+
+two:
+  delivery: two
+  deduction: two
+  comm: 9.99
+  totalcomm: 9.99

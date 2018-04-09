@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Commissions</h1>
+
+<table class="table table-striped table-bordered table-hover table-sm " id="myTable">
+  <thead class="table-secondary">
+    <tr>
+      <th>Delivery</th>
+      <th>Deduction</th>
+      <th>Comm</th>
+      <th>Totalcomm</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @commissions.each do |commission| %>
+      <tr>
+        <td><%= commission.delivery %></td>
+        <td><%= commission.deduction %></td>
+        <td><%= commission.comm %></td>
+        <td><%= commission.totalcomm %></td>
+        <td><%= link_to 'Show', commission %></td>
+        <td><%= link_to 'Edit', edit_commission_path(commission) %></td>
+        <td><%= link_to 'Destroy', commission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Commission', new_commission_path %>

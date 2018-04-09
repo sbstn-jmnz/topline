@@ -1,0 +1,41 @@
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper" class=" navbar bg-dark">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="<%= root_path %>#"><h2>StgoOffice</h2></a>
+                </li>
+                <li>
+                    <a href="<%= quotations_path %>">Quotations</a>
+                </li>
+                <li>
+                    <a href="<%= orders_path%>">Orders</a>
+                </li>
+                <li>
+                    <a href="#">Payments</a>
+                </li>
+                <li>
+                    <a href="#">Statements</a>
+                </li>
+                <li>
+                    <a href="<%= products_path %>">Products</a>
+                </li>
+                <li>
+                    <a href="<%= clients_path %>">Client Information</a>
+                </li>
+                <li>
+                    <a href="<%= suppliers_path %>">Supplier Information</a>
+                </li>
+            </ul>
+        </div>
+
+        <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle"><i class="fa fa-chevron-right"></i></a>
+
+        <!-- /#sidebar-wrapper -->
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>

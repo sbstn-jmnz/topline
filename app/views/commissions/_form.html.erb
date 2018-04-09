@@ -1,0 +1,37 @@
+<%= form_with(model: commission, local: true) do |form| %>
+  <% if commission.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(commission.errors.count, "error") %> prohibited this commission from being saved:</h2>
+
+      <ul>
+      <% commission.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :delivery_id %>
+    <%= form.collection_select :delivery_id, Delivery.all, :id, :delivery_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :deduction_id %>
+    <%= form.collection_select :deduction_id, Deduction.all, :id, :deductions %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comm %>
+    <%= form.text_field :comm, id: :commission_comm %>
+  </div>
+
+  <div class="field">
+    <%= form.label :totalcomm %>
+    <%= form.text_field :totalcomm, id: :commission_totalcomm %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

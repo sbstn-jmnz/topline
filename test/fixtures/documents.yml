@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  delivery: one
+  docsbymail: 2018-04-07
+  approvaldate: 2018-04-07
+  courier: MyString
+  received: 2018-04-07
+  senttoclient: 2018-04-07
+
+two:
+  delivery: two
+  docsbymail: 2018-04-07
+  approvaldate: 2018-04-07
+  courier: MyString
+  received: 2018-04-07
+  senttoclient: 2018-04-07
