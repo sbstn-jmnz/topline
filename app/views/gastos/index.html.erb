@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gastos</h1>
+
+<table class="table table-striped table-bordered table-hover table-sm " id="myTable">
+  <thead>
+    <tr>
+      <th>Cc</th>
+      <th>Fecha</th>
+      <th>Descripcion</th>
+      <th>Cargo</th>
+      <th>Saldo</th>
+      <th>Pagado</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gastos.each do |gasto| %>
+      <tr>
+        <td><%= gasto.cc %></td>
+        <td><%= gasto.fecha %></td>
+        <td><%= gasto.descripcion %></td>
+        <td><%= gasto.cargo %></td>
+        <td><%= gasto.saldo %></td>
+        <td><%= gasto.pagado %></td>
+        <td><%= link_to 'Show', gasto %></td>
+        <td><%= link_to 'Edit', edit_gasto_path(gasto) %></td>
+        <td><%= link_to 'Destroy', gasto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<iframe src="https://www.bancochile.cl" height="500px" ></iframe>
+
+<br>
+<%= link_to 'New Gasto', new_gasto_path %>

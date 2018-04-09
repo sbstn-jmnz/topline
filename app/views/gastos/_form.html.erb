@@ -1,0 +1,47 @@
+<%= form_with(model: gasto, local: true) do |form| %>
+  <% if gasto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gasto.errors.count, "error") %> prohibited this gasto from being saved:</h2>
+
+      <ul>
+      <% gasto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cc %>
+    <%= form.text_field :cc, id: :gasto_cc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha %>
+    <%= form.date_select :fecha, id: :gasto_fecha %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion, id: :gasto_descripcion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cargo %>
+    <%= form.number_field :cargo, id: :gasto_cargo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :saldo %>
+    <%= form.number_field :saldo, id: :gasto_saldo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pagado %>
+    <%= form.check_box :pagado, id: :gasto_pagado %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

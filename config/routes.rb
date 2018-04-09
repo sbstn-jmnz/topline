@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :gastos
   resources :commissions
   resources :documents
   resources :deliveries
