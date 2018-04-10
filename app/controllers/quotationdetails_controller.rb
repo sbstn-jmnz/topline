@@ -69,6 +69,7 @@ class QuotationdetailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quotationdetail_params
-      params.require(:quotationdetail).permit(:quotation_id, :brand_id, :product_id, :color_id, :quantity, :size_id, :ratio, :deliverydate, :targetprice, :finalprice, :otherdetails)
+      params.require(:quotationdetail).permit(:quotation_id, :brand_id, :product_id, :color_id, :quantity, :size_id, :ratio, :deliverydate, :targetprice, :finalprice, :otherdetails,
+        variants_attributes: Variant.attribute_names.map(&:to_sym).push(:_destroy))
     end
 end

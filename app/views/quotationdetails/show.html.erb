@@ -1,58 +1,43 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Quotation:</strong>
-  <%= @quotationdetail.quotation.id %>
+<table>
+  <thead>
+    <tr>
+      <th><strong>Quotation:</strong></th>
+      <th><strong>Brand:</strong></th>
+      <th><strong>Product:</strong></th>
+      <th><strong>Color:</strong></th>
+      <th><strong>Quantity:</strong></th>
+      <th><strong>Size:</strong></th>
+      <th><strong>Ratio:</strong></th>
+      <th><strong>Deliverydate:</strong></th>
+      <th><strong>Targetprice:</strong></th>
+      <th><strong>Finalprice:</strong></th>
+      <th><strong>Otherdetails:</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @quotationdetail.quotation.id %></td>
+      <td><%= @quotationdetail.brand.name %></td>
+      <td><%= @quotationdetail.product.description %></td>
+      <td><%= @quotationdetail.color.name %></td>
+      <td><%= @quotationdetail.quantity %></td>
+      <td><%= @quotationdetail.size.name %></td>
+      <td><%= @quotationdetail.ratio %></td>
+      <td><%= @quotationdetail.deliverydate %></td>
+      <td><%= @quotationdetail.targetprice %></td>
+      <td><%= @quotationdetail.finalprice %></td>
+      <td><%= @quotationdetail.otherdetails %></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
 </p>
 
 <p>
-  <strong>Brand:</strong>
-  <%= @quotationdetail.brand.name %>
-</p>
-
-<p>
-  <strong>Product:</strong>
-  <%= @quotationdetail.product.description %>
-</p>
-
-<p>
-  <strong>Color:</strong>
-  <%= @quotationdetail.color.name %>
-</p>
-
-<p>
-  <strong>Quantity:</strong>
-  <%= @quotationdetail.quantity %>
-</p>
-
-<p>
-  <strong>Size:</strong>
-  <%= @quotationdetail.size.name %>
-</p>
-
-<p>
-  <strong>Ratio:</strong>
-  <%= @quotationdetail.ratio %>
-</p>
-
-<p>
-  <strong>Deliverydate:</strong>
-  <%= @quotationdetail.deliverydate %>
-</p>
-
-<p>
-  <strong>Targetprice:</strong>
-  <%= @quotationdetail.targetprice %>
-</p>
-
-<p>
-  <strong>Finalprice:</strong>
-  <%= @quotationdetail.finalprice %>
-</p>
-
-<p>
-  <strong>Otherdetails:</strong>
-  <%= @quotationdetail.otherdetails %>
 </p>
 
 <%= link_to 'Edit', edit_quotationdetail_path(@quotationdetail) %> |

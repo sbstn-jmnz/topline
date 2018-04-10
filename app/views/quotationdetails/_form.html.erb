@@ -1,1 +1,49 @@
-%>
+<%= form_for @quotationdetail do |f| %>
+
+<table class="table table-responsive table-striped table-bordered table-hover table-sm ">
+  <thead class="table-active">
+    <tr>
+      <th><%= f.label :status %></th>
+      <th><%= f.label :quotation_id %></th>
+      <th><%= f.label :brand_id %></th>
+      <th><%= f.label :product_id %></th>
+      <th><%= f.label :deliverydate %></th>
+      <th><%= f.label :targetprice %></th>
+      <th><%= f.label :finalprice %></th>
+      <th><%= f.label :otherdetails, "Style N°" %></th>
+      <th><%= f.label :color_id %></th>
+      <th><%= f.label :quantity, "Total quantity"%></th>
+      <th><%= f.label :ratio %></th>
+      <th><%= f.label :size %></th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= f.text_field :status, id: :status %></td>
+      <td><%= f.collection_select :quotation_id, Quotation.all, :id, :id %></td>
+      <td><%= f.collection_select :brand_id, Brand.all, :id, :name %></td>
+      <td><%= f.collection_select :product_id, Product.all, :id, :description %></td>
+      <td><%= f.date_field :deliverydate, id: :quotationdetail_deliverydate %></td>
+      <td><%= f.number_field :targetprice, id: :quotationdetail_targetprice %></td>
+      <td><%= f.number_field :finalprice, id: :quotationdetail_finalprice %></td>
+      <td><%= f.text_field :otherdetails, id: :quotationdetail_otherdetails %></td>
+      <td><%= f.collection_select :color_id, Color.all, :id, :name %></td>
+      <td><%= f.number_field :quantity, id: :quantity %></td>
+      <td><%= f.text_field :ratio, id: :ratio%></td>
+      <td><%= f.collection_select :size_id, Size.all, :id, :name%></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Variants</h3>
+  <div id='variants'>
+    <div class='links'>
+      <button><%= link_to_add_association 'add row', f, :variants%></button>
+    </div>
+    <%= f.fields_for :variants do |f| %>
+      <%= render 'variant_fields', :f => f %>
+      <% end %>
+    </div>
+    <hr>
+  <%= f.submit 'Save' %>
+<% end %>

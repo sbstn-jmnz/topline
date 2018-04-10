@@ -5,6 +5,7 @@
 <table class="table table-striped table-bordered table-hover table-sm " id="myTable">
   <thead class="table-danger">
     <tr>
+      <th>Status</th>
       <th>Quotation</th>
       <th>Brand</th>
       <th>Product</th>
@@ -16,17 +17,20 @@
       <th>Targetprice</th>
       <th>Finalprice</th>
       <th>Otherdetails</th>
+      <th>Total order</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
 
-      <th>Total order</th>
+
     </tr>
   </thead>
 
   <tbody>
     <% @quotationdetails.each do |quotationdetail| %>
       <tr>
+        <td><%= quotationdetail.status? ? "Confirmed" : "Not Confirmed" %></td>
         <td><%= quotationdetail.quotation.id %></td>
         <td><%= quotationdetail.brand.name %></td>
         <td><%= quotationdetail.product.description %></td>
@@ -38,13 +42,14 @@
         <td><%= quotationdetail.targetprice %></td>
         <td><%= quotationdetail.finalprice %></td>
         <td><%= quotationdetail.otherdetails %></td>
+        <td><%= (quotationdetail.quantity.to_i * quotationdetail.finalprice.to_i)  %></td>
         <td><%= link_to 'Show', quotationdetail %></td>
         <td><%= link_to 'Edit', edit_quotationdetail_path(quotationdetail) %></td>
         <td><%= link_to 'Destroy', quotationdetail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td> <%= (quotationdetail.quantity.to_i * quotationdetail.finalprice.to_i) %></td>
       </tr>
-    <% end %>
+      <% end %>
   </tbody>
+
 </table>
 
 <br>

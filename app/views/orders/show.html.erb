@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Proforma:</strong>
+  <%= @order.proforma %>
+</p>
+
+<p>
+  <strong>Quotation:</strong>
+  <%= @order.quotation %>
+</p>
+
+<p>
+  <strong>Quotationdetail:</strong>
+  <%= @order.quotationdetail %>
+</p>
+
+<p>
+  <strong>Variant:</strong>
+  <%= @order.variant %>
+</p>
+
+<p>
+  <strong>Totalorder:</strong>
+  <%= @order.totalorder %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

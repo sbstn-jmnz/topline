@@ -1,3 +1,4 @@
 class Variant < ApplicationRecord
-  belongs_to :quotation_detail, inverse_of: :variant
+  belongs_to :quotationdetail
+  belongs_to :size
 end

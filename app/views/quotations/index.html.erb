@@ -1,11 +1,14 @@
 <p id="notice"><%= notice %></p>
-
+<h5 class="table-danger"> Remember to add products first before adding new Quotationdetails</h5>
+<%= link_to "Add product",  products_path %>
+<hr>
 
 <h2>Quotations</h2>
 
 <table class="table table-striped table-bordered table-hover table-sm " id="myTable">
   <thead class="table-warning">
     <tr>
+      <th>Quotation N°</th>
       <th>Season</th>
       <th>Supplier</th>
       <th>Handler</th>
@@ -18,6 +21,9 @@
       <th>links</th>
       <th>links</th>
       <th>links</th>
+      <th>links</th>
+      <th>links</th>
+
 
     </tr>
   </thead>
@@ -25,6 +31,7 @@
   <tbody>
     <% @quotations.each do |quotation| %>
       <tr>
+        <td><%= quotation.id %></td>
         <td><%= quotation.season.name %></td>
         <td><%= quotation.supplier.name %></td>
         <td><%= quotation.handler.name %></td>
@@ -32,14 +39,11 @@
         <td><%= quotation.client.name %></td>
         <td><%= quotation.paymentterm.clause %></td>
         <td><%= quotation.paymentterm.conditions %></td>
-        <td><%= quotation.status? ? "Confirmed" : "Pending" %> |
+        <td><%= quotation.status? ? "Completed" : "Pending" %></td>
         <td><%= quotation.pi %></td>
-        <td><%= link_to 'Show', quotation %>
-          <% if quotation.status? == false%>
-          <%= link_to "add new quotation", new_quotationdetail_path %>|
-          <%= link_to "Edit quotation", quotationdetails_path %></td>
-        <% end %>
-
+        <td><%= link_to 'Show', quotation %></td>
+        <td><%= link_to "add new quotation", new_quotationdetail_path %></td>
+        <td><%= link_to "Edit quotation", quotationdetails_path %></td>
         <td><%= link_to 'Edit', edit_quotation_path(quotation) %></td>
         <td><%= link_to 'Destroy', quotation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

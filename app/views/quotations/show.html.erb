@@ -1,44 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Season:</strong>
-  <%= @quotation.season %>
-</p>
+<table class="table table-striped table-bordered table-hover table-sm " id="myTable">
+  <thead>
+    <tr>
+      <th><strong>Quotation N°:</strong></th>
+      <th><strong>Season:</strong></th>
+      <th><strong>Supplier:</strong></th>
+      <th><strong>Handler:</strong></th>
+      <th><strong>Seller:</strong></th>
+      <th><strong>Client:</strong></th>
+      <th><strong>Clause:</strong></th>
+      <th><strong>Paymentterms:</strong></th>
+      <th><strong>Status:</strong></th>
+      <th><strong>Details:</strong></th>
+    </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><%= @quotation.id %></td>
+    <td><%= @quotation.season.name %></td>
+    <td><%= @quotation.supplier.name %></td>
+    <td><%= @quotation.handler.name %></td>
+    <td><%= @quotation.seller.name  %></td>
+    <td><%= @quotation.client.name %></td>
+    <td><%= @quotation.paymentterm.clause %></td>
+    <td><%= @quotation.paymentterm.conditions %></td>
+    <td><%= @quotation.status %></td>
+    <td><%= link_to "See details", quotationdetails_path %></td>
 
-<p>
-  <strong>Supplier:</strong>
-  <%= @quotation.supplier %>
-</p>
-
-<p>
-  <strong>Handler:</strong>
-  <%= @quotation.handler %>
-</p>
-
-<p>
-  <strong>Seller:</strong>
-  <%= @quotation.seller %>
-</p>
-
-<p>
-  <strong>Client:</strong>
-  <%= @quotation.client %>
-</p>
-
-<p>
-  <strong>Paymentterm:</strong>
-  <%= @quotation.paymentterm %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @quotation.status %>
-</p>
-
-<p>
-  <strong>proforma:</strong>
-  <%= @quotation.pi %>
-</p>
+  </tr>
+</tbody>
+</table>
 
 <%= link_to 'Edit', edit_quotation_path(@quotation) %> |
 <%= link_to 'Back', quotations_path %>

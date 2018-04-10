@@ -11,60 +11,47 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :category_id %>
-    <%= form.collection_select :category_id, Category.all, :id, :name %>
-  </div>
+  <table class="table table-responsive table-striped table-bordered table-hover table-sm ">
 
-  <div class="field">
-    <%= form.label :photo %>
-    <%= form.text_field :photo, id: :product_photo %>
-  </div>
+    <thead>
+      <tr>
+        <th><%= form.label :category_id %></th>
+        <th><%= form.label :photo %></th>
+        <th><%= form.label :description %></th>
+        <th><%= form.label :composition %></th>
+        <th><%= form.label :construction %></th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr>
+        <td><%= form.collection_select :category_id, Category.all, :id, :name %></td>
+        <td><%= form.text_field :photo, id: :product_photo %></td>
+        <td><%= form.text_field :description, id: :product_description %></td>
+        <td><%= form.text_field :composition, id: :product_composition %></td>
+        <td><%= form.text_field :construction, id: :product_construction %></td>
+      </tr>
+    </tbody>
+    <thead>
+      <th><%= form.label :finish %></th>
+      <th><%= form.label :fit %></th>
+      <th><%= form.label :placket %></th>
+      <th><%= form.label :pocket %></th>
+      <th><%= form.label :washing %></th>
+      <th><%= form.label :other %></th>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :product_description %>
-  </div>
+    </thead>
+    <tbody>
+      <td><%= form.text_field :finish, id: :product_finish %></td>
+      <td><%= form.text_field :fit, id: :product_fit %></td>
+      <td><%= form.text_field :placket, id: :product_placket %></td>
+      <td><%= form.text_field :pocket, id: :product_pocket %></td>
+      <td><%= form.text_field :washing, id: :product_washing %></td>
+      <td><%= form.text_field :other, id: :product_other %></td>
+    </tbody>
+  </table>
 
-  <div class="field">
-    <%= form.label :finish %>
-    <%= form.text_field :finish, id: :product_finish %>
-  </div>
 
-  <div class="field">
-    <%= form.label :composition %>
-    <%= form.text_field :composition, id: :product_composition %>
-  </div>
-
-  <div class="field">
-    <%= form.label :fit %>
-    <%= form.text_field :fit, id: :product_fit %>
-  </div>
-
-  <div class="field">
-    <%= form.label :construction %>
-    <%= form.text_field :construction, id: :product_construction %>
-  </div>
-
-  <div class="field">
-    <%= form.label :placket %>
-    <%= form.text_field :placket, id: :product_placket %>
-  </div>
-
-  <div class="field">
-    <%= form.label :pocket %>
-    <%= form.text_field :pocket, id: :product_pocket %>
-  </div>
-
-  <div class="field">
-    <%= form.label :washing %>
-    <%= form.text_field :washing, id: :product_washing %>
-  </div>
-
-  <div class="field">
-    <%= form.label :other %>
-    <%= form.text_field :other, id: :product_other %>
-  </div>
 
   <div class="actions">
     <%= form.submit %>

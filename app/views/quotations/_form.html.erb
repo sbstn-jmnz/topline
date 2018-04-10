@@ -1,29 +1,32 @@
-<%= form_for @quotation do |f| %>
-    <%= f.label :season_id %>
-    <%= f.collection_select :season_id, Season.all, :id, :name   %>
-    <%= f.label :supplier_id %>
-    <%= f.collection_select :supplier_id, Supplier.all, :id, :name %>
-    <%= f.label :handler_id %>
-    <%= f.collection_select :handler_id, Handler.all, :id, :name %>
-    <%= f.label :seller_id %>
-    <%= f.collection_select :seller_id, Seller.all, :id, :name %>
-    <%= f.label :client_id %>
-    <%= f.collection_select :client_id, Client.all, :id, :name %>
-    <%= f.label :paymentterm_id %>
-    <%= f.collection_select :paymentterm_id, Paymentterm.all, :id, :clause %>
-    <%= f.collection_select :paymentterm_id, Paymentterm.all, :id, :conditions %>
-    <%= f.label :status %>
-    <%= f.check_box :status, id: :quotation_status %>
-    <%= f.label :pi, "Proforma" %>
-    <%= f.text_field :pi, id: :pi %>
-  <h3>Quotation Details</h3>
-  <div id='quotationdetails'>
-    <div class='links'>
-      <button type="button" name="button"><%= link_to_add_association 'add row', f, :quotationdetails%></button>
+<%= form_with(model: quotation, local: true) do |form| %>
+  <% if quotation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(quotation.errors.count, "error") %> prohibited this quotation from being saved:</h2>
+
+      <ul>
+      <% quotation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
     </div>
-    <%= f.fields_for :quotationdetails do |f| %>
-      <%= render 'quotationdetail_fields', :f => f %>
-    <% end %>
-    </div>
-  <%= f.submit 'Save' %>
+  <% end %>
+
+    <%= form.label :season_id %>
+    <%= form.collection_select :season_id, Season.all, :id, :name   %>
+    <%= form.label :supplier_id %>
+    <%= form.collection_select :supplier_id, Supplier.all, :id, :name %>
+    <%= form.label :handler_id %>
+    <%= form.collection_select :handler_id, Handler.all, :id, :name %>
+    <%= form.label :seller_id %>
+    <%= form.collection_select :seller_id, Seller.all, :id, :name %>
+    <%= form.label :client_id %>
+    <%= form.collection_select :client_id, Client.all, :id, :name %>
+    <%= form.label :paymentterm_id %>
+    <%= form.collection_select :paymentterm_id, Paymentterm.all, :id, :clause %>
+    <%= form.collection_select :paymentterm_id, Paymentterm.all, :id, :conditions %>
+    <%= form.label :status, "Completed?" %>
+    <%= form.check_box :status, id: :quotation_status %>
+
+
+  <%= form.submit 'Save' %>
 <% end %>
