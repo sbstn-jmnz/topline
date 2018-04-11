@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180410043006) do
+ActiveRecord::Schema.define(version: 20180411023609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,17 @@ ActiveRecord::Schema.define(version: 20180410043006) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "commissions", force: :cascade do |t|
+    t.bigint "delivery_id"
+    t.bigint "deduction_id"
+    t.decimal "com"
+    t.decimal "totalcom"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["deduction_id"], name: "index_commissions_on_deduction_id"
+    t.index ["delivery_id"], name: "index_commissions_on_delivery_id"
+  end
+
   create_table "deductions", force: :cascade do |t|
     t.bigint "client_id"
     t.datetime "created_at", null: false
@@ -89,6 +100,36 @@ ActiveRecord::Schema.define(version: 20180410043006) do
     t.decimal "overcharge", precision: 20, scale: 3
     t.decimal "interest", precision: 20, scale: 3
     t.index ["client_id"], name: "index_deductions_on_client_id"
+  end
+
+  create_table "deliveries", force: :cascade do |t|
+    t.bigint "order_id"
+    t.bigint "port_id"
+    t.string "invnumber"
+    t.date "invdate"
+    t.integer "totalinvq"
+    t.decimal "price"
+    t.decimal "totalinvamount"
+    t.date "eta"
+    t.string "bl"
+    t.string "docs"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_deliveries_on_order_id"
+    t.index ["port_id"], name: "index_deliveries_on_port_id"
+  end
+
+  create_table "documents", force: :cascade do |t|
+    t.bigint "delivery_id"
+    t.date "docsbymail"
+    t.date "approvaldate"
+    t.string "coriername"
+    t.string "couriernumber"
+    t.date "docsreceived"
+    t.date "docssenttoclient"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["delivery_id"], name: "index_documents_on_delivery_id"
   end
 
   create_table "gastos", force: :cascade do |t|
@@ -127,6 +168,19 @@ ActiveRecord::Schema.define(version: 20180410043006) do
   create_table "pages", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.bigint "order_id"
+    t.decimal "totalamount"
+    t.decimal "advance"
+    t.date "advancedate"
+    t.decimal "balance"
+    t.decimal "balancepaid"
+    t.date "paiddate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_payments_on_order_id"
   end
 
   create_table "paymentterms", force: :cascade do |t|
@@ -200,6 +254,8 @@ ActiveRecord::Schema.define(version: 20180410043006) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "pi"
+    t.string "recap"
+    t.string "tecsheets"
     t.index ["client_id"], name: "index_quotations_on_client_id"
     t.index ["handler_id"], name: "index_quotations_on_handler_id"
     t.index ["paymentterm_id"], name: "index_quotations_on_paymentterm_id"
@@ -294,11 +350,17 @@ ActiveRecord::Schema.define(version: 20180410043006) do
     t.index ["size_id"], name: "index_variants_on_size_id"
   end
 
+  add_foreign_key "commissions", "deductions"
+  add_foreign_key "commissions", "deliveries"
   add_foreign_key "deductions", "clients"
+  add_foreign_key "deliveries", "orders"
+  add_foreign_key "deliveries", "ports"
+  add_foreign_key "documents", "deliveries"
   add_foreign_key "handlers", "suppliers"
   add_foreign_key "orders", "quotationdetails"
   add_foreign_key "orders", "quotations"
   add_foreign_key "orders", "variants"
+  add_foreign_key "payments", "orders"
   add_foreign_key "products", "categories"
   add_foreign_key "quotationdetails", "brands"
   add_foreign_key "quotationdetails", "colors"

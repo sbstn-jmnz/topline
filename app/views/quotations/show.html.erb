@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<table class="table table-striped table-bordered table-hover table-sm " id="myTable">
+<table class="table table-responsive table-striped table-bordered table-hover table-sm " id="myTable">
   <thead>
     <tr>
       <th><strong>Quotation N°:</strong></th>
@@ -12,6 +12,8 @@
       <th><strong>Clause:</strong></th>
       <th><strong>Paymentterms:</strong></th>
       <th><strong>Status:</strong></th>
+      <th><strong>Recap:</strong></th>
+      <th><strong>Techsheets:</strong></th>
       <th><strong>Details:</strong></th>
     </tr>
 </thead>
@@ -26,7 +28,10 @@
     <td><%= @quotation.paymentterm.clause %></td>
     <td><%= @quotation.paymentterm.conditions %></td>
     <td><%= @quotation.status %></td>
-    <td><%= link_to "See details", quotationdetails_path %></td>
+    <td><%= @quotation.recap %></td>
+    <td><%= @quotation.tecsheets %></td>
+
+    <td><%= link_to "See details", quotationdetails_path(@quotation.id) %></td>
 
   </tr>
 </tbody>

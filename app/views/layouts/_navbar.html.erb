@@ -1,18 +1,15 @@
-<nav class="navbar fixed-top navbar-expand-lg bg-dark">
-  <a class="navbar-brand" href="#">Stgo Office</a>
-  <div class="collapse navbar-collapse">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="<%=root_path %>">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="<%=orders_path %>">All Orders</a>
-      <a class="nav-item nav-link" href="<%=products_path %>">All Products</a>
-      <a class="nav-item nav-link" href="<%=clients_path %>">All Clients</a>
-      <a class="nav-item nav-link" href="<%=sellers_path %>">Sellers </a>
-      <a class="nav-item nav-link" href="<%=root_path %>">Pending payments</a>
-      <a class="nav-item nav-link" href="<%=root_path %>">Summary</a>
-      <a class="nav-item nav-link" href="<%=quotations_path %>"> Quotations</a>
-
-
-      <a class="nav-item nav-link disabled" href="#">Disabled</a>
-    </div>
-  </div>
+<nav class="navbar fixed-top navbar-expand-sm bg-dark">
+<li class="navbar-brand">
+    <a class="btn btn-outline-warning"href="<%= root_path %>#"><h5>StgoOffice</h5></a>
+</li>
+<li>
+  <a href="#menu-toggle" class="btn btn-outline-warning" id="menu-toggle"><i class="fa fa-chevron-right"></i></a>
+</li>
+<ul class="navbar-nav ml-auto">
+  <li>
+    <button type="button" class="btn btn-warning">
+  Logout  <span class="badge badge-light"><i class="fa fa-fw fa-sign-out"></i></span>
+</button>
+  </li>
+</ul>
 </nav>

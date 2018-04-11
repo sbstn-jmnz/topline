@@ -1,0 +1,67 @@
+<%= form_with(model: delivery, local: true) do |form| %>
+  <% if delivery.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(delivery.errors.count, "error") %> prohibited this delivery from being saved:</h2>
+
+      <ul>
+      <% delivery.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :order_id %>
+    <%= form.text_field :order_id, id: :delivery_order_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :port_id %>
+    <%= form.text_field :port_id, id: :delivery_port_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :invnumber %>
+    <%= form.text_field :invnumber, id: :delivery_invnumber %>
+  </div>
+
+  <div class="field">
+    <%= form.label :invdate %>
+    <%= form.date_select :invdate, id: :delivery_invdate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :totalinvq %>
+    <%= form.number_field :totalinvq, id: :delivery_totalinvq %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :delivery_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :totalinvamount %>
+    <%= form.text_field :totalinvamount, id: :delivery_totalinvamount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :eta %>
+    <%= form.date_select :eta, id: :delivery_eta %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bl %>
+    <%= form.text_field :bl, id: :delivery_bl %>
+  </div>
+
+  <div class="field">
+    <%= form.label :docs %>
+    <%= form.text_field :docs, id: :delivery_docs %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -17,7 +17,7 @@ class CommissionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create commission" do
     assert_difference('Commission.count') do
-      post commissions_url, params: { commission: { comm: @commission.comm, deduction_id: @commission.deduction_id, delivery_id: @commission.delivery_id, totalcomm: @commission.totalcomm } }
+      post commissions_url, params: { commission: { com: @commission.com, deduction_id: @commission.deduction_id, delivery_id: @commission.delivery_id, totalcom: @commission.totalcom } }
     end
 
     assert_redirected_to commission_url(Commission.last)
@@ -34,7 +34,7 @@ class CommissionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update commission" do
-    patch commission_url(@commission), params: { commission: { comm: @commission.comm, deduction_id: @commission.deduction_id, delivery_id: @commission.delivery_id, totalcomm: @commission.totalcomm } }
+    patch commission_url(@commission), params: { commission: { com: @commission.com, deduction_id: @commission.deduction_id, delivery_id: @commission.delivery_id, totalcom: @commission.totalcom } }
     assert_redirected_to commission_url(@commission)
   end
 

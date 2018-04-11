@@ -2,16 +2,18 @@
 
 one:
   delivery: one
-  docsbymail: 2018-04-07
-  approvaldate: 2018-04-07
-  courier: MyString
-  received: 2018-04-07
-  senttoclient: 2018-04-07
+  docsbymail: 2018-04-10
+  approvaldate: 2018-04-10
+  coriername: MyString
+  couriernumber: MyString
+  docsreceived: 2018-04-10
+  docssenttoclient: 2018-04-10
 
 two:
   delivery: two
-  docsbymail: 2018-04-07
-  approvaldate: 2018-04-07
-  courier: MyString
-  received: 2018-04-07
-  senttoclient: 2018-04-07
+  docsbymail: 2018-04-10
+  approvaldate: 2018-04-10
+  coriername: MyString
+  couriernumber: MyString
+  docsreceived: 2018-04-10
+  docssenttoclient: 2018-04-10

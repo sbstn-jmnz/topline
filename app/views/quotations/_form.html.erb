@@ -26,7 +26,14 @@
     <%= form.collection_select :paymentterm_id, Paymentterm.all, :id, :conditions %>
     <%= form.label :status, "Completed?" %>
     <%= form.check_box :status, id: :quotation_status %>
-
-
+    <%= form.label :pi, "Assign Proforma" %>
+    <%= form.text_field :pi, id: :pi %>
+    <%= form.label :recap %>
+    <%= form.file_field :recap, id: :recap%>
+    <%= form.text_field :remote_recap_url, id: :remote_recap%>
+    <%= form.label :tecsheets %>
+    <%= form.file_field :tecsheets, id: :tecsheets%>
+    <%= form.text_field :remote_tecsheets_url, id: :remote_tecsheets%>
+<br>
   <%= form.submit 'Save' %>
 <% end %>

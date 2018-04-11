@@ -7,8 +7,10 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'carrierwave', '~> 1.0'
 gem 'rails', '~> 5.1.4'
 gem 'devise'
+gem 'mini_magick'
 gem 'activeadmin'
 gem "rails-erd"
 gem "font-awesome-rails"

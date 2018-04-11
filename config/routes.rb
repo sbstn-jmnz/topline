@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  resources :commissions
   resources :orders
   resources :variants
   resources :gastos
-  resources :commissions
   resources :documents
   resources :deliveries
   resources :payments

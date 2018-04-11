@@ -1,4 +1,4 @@
 class Delivery < ApplicationRecord
-  belongs_to :orders
-  has_many :commissions
+  belongs_to :order
+  belongs_to :port
 end

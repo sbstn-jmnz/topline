@@ -2,38 +2,51 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper" class=" navbar bg-dark">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="<%= root_path %>#"><h2>StgoOffice</h2></a>
+
+                <div class="card mr-5 bg-dark">
+                      <div class="card-body">
+                      <img src="https://pbs.twimg.com/media/BvV1Td2CUAA24nX.jpg" class="rounded-circle border border-warning" style="height:100px">
+                      </div>
+                      <div class="card-footer text-white">
+                        <p>current_user.email</p>
+                      </div>
+                </div>
+              <hr>
+                  <li>
+                    <h6><a href="<%= quotations_path %>">Quotations</a></h6>
                 </li>
+                <hr>
                 <li>
-                    <a href="<%= quotations_path %>">Quotations</a>
+                    <h6><a href="<%= orders_path%>">Orders</a></h6>
                 </li>
+                <hr>
                 <li>
-                    <a href="<%= orders_path%>">Orders</a>
+                    <h6><a href="#">Payments</a></h6>
                 </li>
+                <hr>
                 <li>
-                    <a href="#">Payments</a>
+                    <h6><a href="#">Statements</a></h6>
                 </li>
+                <hr>
                 <li>
-                    <a href="#">Statements</a>
+                    <h6><a href="<%= products_path %>">Products</a></h6>
                 </li>
+                <hr>
                 <li>
-                    <a href="<%= products_path %>">Products</a>
+                    <h6><a href="<%= clients_path %>">Client Information</a></h6>
                 </li>
+                <hr>
                 <li>
-                    <a href="<%= clients_path %>">Client Information</a>
+                    <h6><a href="<%= suppliers_path %>">Supplier Information</a></h6>
                 </li>
-                <li>
-                    <a href="<%= suppliers_path %>">Supplier Information</a>
-                </li>
-                <li>
+                  <li>
                   <i class="fab fa-whatsapp"></i>
                   <a href="https://api.whatsapp.com/send?phone=56982896647">Envía un mensaje de WhatsApp</a>
                 </li>
+                <hr>
             </ul>
         </div>
 
-        <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle"><i class="fa fa-chevron-right"></i></a>
 
         <!-- /#sidebar-wrapper -->
     <!-- Menu Toggle Script -->

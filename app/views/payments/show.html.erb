@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @payment.order %>
+</p>
+
+<p>
+  <strong>Totalamount:</strong>
+  <%= @payment.totalamount %>
+</p>
+
+<p>
+  <strong>Advance:</strong>
+  <%= @payment.advance %>
+</p>
+
+<p>
+  <strong>Advancedate:</strong>
+  <%= @payment.advancedate %>
+</p>
+
+<p>
+  <strong>Balance:</strong>
+  <%= @payment.balance %>
+</p>
+
+<p>
+  <strong>Balancepaid:</strong>
+  <%= @payment.balancepaid %>
+</p>
+
+<p>
+  <strong>Paiddate:</strong>
+  <%= @payment.paiddate %>
+</p>
+
+<%= link_to 'Edit', edit_payment_path(@payment) %> |
+<%= link_to 'Back', payments_path %>

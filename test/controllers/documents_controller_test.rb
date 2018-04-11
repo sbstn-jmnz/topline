@@ -17,7 +17,7 @@ class DocumentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create document" do
     assert_difference('Document.count') do
-      post documents_url, params: { document: { approvaldate: @document.approvaldate, courier: @document.courier, delivery_id: @document.delivery_id, docsbymail: @document.docsbymail, received: @document.received, senttoclient: @document.senttoclient } }
+      post documents_url, params: { document: { approvaldate: @document.approvaldate, coriername: @document.coriername, couriernumber: @document.couriernumber, delivery_id: @document.delivery_id, docsbymail: @document.docsbymail, docsreceived: @document.docsreceived, docssenttoclient: @document.docssenttoclient } }
     end
 
     assert_redirected_to document_url(Document.last)
@@ -34,7 +34,7 @@ class DocumentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update document" do
-    patch document_url(@document), params: { document: { approvaldate: @document.approvaldate, courier: @document.courier, delivery_id: @document.delivery_id, docsbymail: @document.docsbymail, received: @document.received, senttoclient: @document.senttoclient } }
+    patch document_url(@document), params: { document: { approvaldate: @document.approvaldate, coriername: @document.coriername, couriernumber: @document.couriernumber, delivery_id: @document.delivery_id, docsbymail: @document.docsbymail, docsreceived: @document.docsreceived, docssenttoclient: @document.docssenttoclient } }
     assert_redirected_to document_url(@document)
   end
 

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Delivery:</strong>
+  <%= @commission.delivery %>
+</p>
+
+<p>
+  <strong>Deduction:</strong>
+  <%= @commission.deduction %>
+</p>
+
+<p>
+  <strong>Com:</strong>
+  <%= @commission.com %>
+</p>
+
+<p>
+  <strong>Totalcom:</strong>
+  <%= @commission.totalcom %>
+</p>
+
+<%= link_to 'Edit', edit_commission_path(@commission) %> |
+<%= link_to 'Back', commissions_path %>

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @delivery.order %>
+</p>
+
+<p>
+  <strong>Port:</strong>
+  <%= @delivery.port %>
+</p>
+
+<p>
+  <strong>Invnumber:</strong>
+  <%= @delivery.invnumber %>
+</p>
+
+<p>
+  <strong>Invdate:</strong>
+  <%= @delivery.invdate %>
+</p>
+
+<p>
+  <strong>Totalinvq:</strong>
+  <%= @delivery.totalinvq %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @delivery.price %>
+</p>
+
+<p>
+  <strong>Totalinvamount:</strong>
+  <%= @delivery.totalinvamount %>
+</p>
+
+<p>
+  <strong>Eta:</strong>
+  <%= @delivery.eta %>
+</p>
+
+<p>
+  <strong>Bl:</strong>
+  <%= @delivery.bl %>
+</p>
+
+<p>
+  <strong>Docs:</strong>
+  <%= @delivery.docs %>
+</p>
+
+<%= link_to 'Edit', edit_delivery_path(@delivery) %> |
+<%= link_to 'Back', deliveries_path %>
