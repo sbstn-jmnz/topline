@@ -4,8 +4,10 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Quotation.where(status: true) 
-
+    #@orders = Quotation.joins(:quotationdetails).distinct
+    #@orders = Quotation.joins(:quotationdetails, :variants)
+    #@orders = Quotation.joins(:quotationdetails).where(quotationdetails: { status: true })
+    @orders = Quotation.joins(:quotationdetails).where(status: true).references(:quotationdetails).distinct
   end
 
   # GET /orders/1

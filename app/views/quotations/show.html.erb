@@ -31,7 +31,7 @@
     <td><%= @quotation.recap %></td>
     <td><%= @quotation.tecsheets %></td>
 
-    <td><%= link_to "See details", quotationdetails_path(@quotation.id) %></td>
+    <td><%= link_to "See details", quotation_quotationdetails_path(@quotation.id, :quotationdetail_id) %></td>
 
   </tr>
 </tbody>

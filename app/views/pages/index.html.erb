@@ -71,25 +71,25 @@
         <i class="fa fa-hand-o-down"></i> Quick buttons</div>
       <div class="card-body">
         <button class="btn btn-outline-secondary"><%=link_to "All Orders", orders_path%></button>
-        <button class="btn btn-outline-danger"><%=link_to "Update Quotation", quotations_path%></button>
+        <button class="btn btn-outline-secondary"><%=link_to "Update Quotation", quotations_path%></button>
         <button class="btn btn-outline-secondary"><%= link_to "Add new Quotation", new_quotation_path %> </button>
-        <button class="btn btn-outline-danger "><%= link_to "Add new product", new_product_path %> </button>
+        <button class="btn btn-outline-secondary "><%= link_to "Add new product", new_product_path %> </button>
         <button class="btn btn-outline-secondary"><%= link_to "Add new client", new_client_path%></button>
-        <button class="btn btn-outline-danger"><%= link_to "Add new season", new_season_path%></button>
-        <button class="btn btn-outline-danger"><%= link_to "Add new payment term", new_paymentterm_path%></button>
-        <button class="btn btn-outline-danger"><%= link_to "Add new payment", new_payment_path%></button>
-        <button class="btn btn-outline-danger"><%= link_to "Add new handler", new_handler_path%></button>
-        <button class="btn btn-outline-danger"><%= link_to "Add new document control", new_document_path%></button>
-        <button class="btn btn-outline-danger"><%= link_to "Add new delivery", new_delivery_path%></button>
-        <button class="btn btn-outline-danger"><%= link_to "Add new deduction", new_deduction_path%></button>
-        <button class="btn btn-outline-danger"><%= link_to "Add new Commission", new_commission_path%></button>
-        <button class="btn btn-outline-danger"><%= link_to "Add new Color", new_color_path%></button>
-        <button class="btn btn-outline-danger"><%= link_to "Add new Category", new_category_path%></button>
-        <button class="btn btn-outline-danger"><%= link_to "Add new brand", new_brand_path%></button>
-        <button class="btn btn-outline-danger"><%= link_to "Add new port", new_port_path%></button>
-        <button class="btn btn-outline-danger"><%= link_to "Add Seller", new_seller_path%></button>
-        <button class="btn btn-outline-danger"><%= link_to "Add new Size", new_size_path%></button>
-        <button class="btn btn-outline-danger"><%= link_to "Add new Supplier", new_supplier_path%></button>
+        <button class="btn btn-outline-secondary"><%= link_to "Add new season", new_season_path%></button>
+        <button class="btn btn-outline-secondary"><%= link_to "Add new payment term", new_paymentterm_path%></button>
+        <button class="btn btn-outline-secondary"><%= link_to "Add new payment", new_payment_path%></button>
+        <button class="btn btn-outline-secondary"><%= link_to "Add new handler", new_handler_path%></button>
+        <button class="btn btn-outline-secondary"><%= link_to "Add new document control", new_document_path%></button>
+        <button class="btn btn-outline-secondary"><%= link_to "Add new delivery", new_delivery_path%></button>
+        <button class="btn btn-outline-secondary"><%= link_to "Add new deduction", new_deduction_path%></button>
+        <button class="btn btn-outline-secondary"><%= link_to "Add new Commission", new_commission_path%></button>
+        <button class="btn btn-outline-secondary"><%= link_to "Add new Color", new_color_path%></button>
+        <button class="btn btn-outline-secondary"><%= link_to "Add new Category", new_category_path%></button>
+        <button class="btn btn-outline-secondary"><%= link_to "Add new brand", new_brand_path%></button>
+        <button class="btn btn-outline-secondary"><%= link_to "Add new port", new_port_path%></button>
+        <button class="btn btn-outline-secondary"><%= link_to "Add Seller", new_seller_path%></button>
+        <button class="btn btn-outline-secondary"><%= link_to "Add new Size", new_size_path%></button>
+        <button class="btn btn-outline-secondary"><%= link_to "Add new Supplier", new_supplier_path%></button>
 
 
 
@@ -101,9 +101,9 @@
     <!-- Quotation-->
     <div class="card mb-3">
       <div class="card-header">
-        <i class="fa fa-area-chart"></i> Quotations</div>
+        <i class="fa fa-area-chart"></i> Orders </div>
       <div class="card-body">
-        <%= render template: "quotations/index" %>
+        <%= render template: "orders/index" %>
 
       </div>
       <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
@@ -137,8 +137,4 @@
     </div>
     <!-- Example DataTables Card-->
     <div class="card">
-
-            <iframe src="http://www.motoboychile.cl/" height="400px" width="vh">
-            </iframe>
-
     </div>

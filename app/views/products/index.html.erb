@@ -3,7 +3,7 @@
 <h1>Products</h1>
 
 <table class="table table-responsive table-striped table-bordered table-hover table-sm " id="myTable">
-  <thead class="table-primary">
+  <thead>
     <tr>
       <th>Product N°</th>
       <th>Category</th>
@@ -38,9 +38,9 @@
         <td><%= product.pocket %></td>
         <td><%= product.washing %></td>
         <td><%= product.other %></td>
-        <td><%= link_to 'Show', product, class: "btn btn-outline-primary btn-sm" %></td>
-        <td><%= link_to 'Edit', edit_product_path(product), class: "btn btn-outline-primary btn-sm" %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-primary btn-sm" %></td>
+        <td><%= link_to 'Show', product%></td>
+        <td><%= link_to 'Edit', edit_product_path(product)%></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }%></td>
       </tr>
     <% end %>
   </tbody>
@@ -48,4 +48,4 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path, class: "btn btn-outline-primary btn-sm" %>
+<%= link_to 'New Product', new_product_path%>

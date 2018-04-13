@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'pages#index'
   resources :commissions
   resources :orders
   resources :variants
@@ -10,13 +11,13 @@ Rails.application.routes.draw do
   resources :deductions
   #get 'orders/index'
   resources :orders, only: :index
-  resources :quotationdetails
   resources :products
-  resources :quotations
+  resources :quotations do
+    resources :quotationdetails
+  end
   resources :handlers
   resources :supplieraccounts
   resources :selleraccounts
-  root to: 'pages#index'
   resources :ports
   resources :categories
   resources :paymentterms

@@ -7,6 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'fog-aws'
 gem 'carrierwave', '~> 1.0'
 gem 'rails', '~> 5.1.4'
 gem 'devise'

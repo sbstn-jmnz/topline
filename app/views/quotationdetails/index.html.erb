@@ -3,7 +3,7 @@
 <h1>Quotationdetails</h1>
 
 <table class="table table-striped table-bordered table-hover table-sm " id="myTable">
-  <thead class="table-danger">
+  <thead>
     <tr>
       <th>Status</th>
       <th>Quotation</th>
@@ -43,15 +43,14 @@
         <td><%= quotationdetail.finalprice %></td>
         <td><%= quotationdetail.otherdetails %></td>
         <td><%= (quotationdetail.quantity.to_i * quotationdetail.finalprice.to_i)  %></td>
-        <td><%= link_to 'Show', quotationdetail %></td>
-        <td><%= link_to 'Edit', edit_quotationdetail_path(quotationdetail) %></td>
-        <td><%= link_to 'Destroy', quotationdetail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', quotation_quotationdetails_path(:quotation_id, quotationdetail.id) %></td>
+        <td><%= link_to 'Edit', edit_quotation_quotationdetail_path(:quotation_id, quotationdetail.id) %></td>
+        <td><%= link_to 'Destroy', quotation_quotationdetail_path(:quotation_id, quotationdetail.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <% end %>
   </tbody>
-
 </table>
 
 <br>
 
-<%= link_to 'New Quotationdetail', new_quotationdetail_path %>
+<%= link_to 'New Quotationdetail', new_quotation_quotationdetail_path %>

@@ -26,7 +26,7 @@
         <td><%= link_to 'Show', seller %></td>
         <td><%= link_to 'Edit', edit_seller_path(seller) %></td>
         <td><%= link_to 'Destroy', seller, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><button type="button" class="btn btn-outline-info"><%= link_to "See Bank Details", selleraccounts_path(seller)%></button></td>
+        <td><%= link_to "See Bank Details", selleraccounts_path(seller)%></td>
 
       </tr>
     <% end %>
