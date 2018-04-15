@@ -45,4 +45,4 @@ Seller.create!([{name: "Antonio Laban", email: "alaban@laban.cl", country: "Chil
                {name: "M.A. Campos", email: "alaban@laban.cl", country: "Chile", phone: "56 22 2222222"}])
 
 Season.create!([{name: "Winter 2017"}, {name: "Summero 2017-2018"}, {name: "Winter 2018"}, {name: "Summer 2018-2019"}])
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+

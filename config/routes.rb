@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: 'pages#index'
   resources :commissions
   resources :orders
@@ -28,8 +29,7 @@ Rails.application.routes.draw do
   resources :sellers
   resources :alarms
   resources :seasons
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  
 
   resources :colors
   resources :sizes

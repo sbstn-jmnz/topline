@@ -1,2 +1,2 @@
-module QuotationdetailsHelper
+module QuotationDetailsHelper
 end
