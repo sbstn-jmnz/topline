@@ -43,6 +43,8 @@ class QuotationdetailsController < ApplicationController
     respond_to do |format|
       if @quotationdetail.update(quotationdetail_params)
         format.html { redirect_to @quotationdetail, notice: 'Quotationdetail was successfully updated.' }
+
+
         format.json { render :show, status: :ok, location: @quotationdetail }
       else
         format.html { render :edit }
